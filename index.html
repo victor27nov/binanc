@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binance Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQXJ/LdmgTXAFVeLYl5IzO9w8Z4hZhVxLAJwV0p6Dh7v1h3YyXz6BLD+4"
+    crossorigin="anonymous"
+  />
+
+  <link rel="shortcut icon" href="fav.jfif" type="image/x-icon">
+  <style>
+    #error-message {
+        /* background-color: #f8d7da; Light red background */
+        color: #721c24; /* Dark red text */
+        /* border: 1px solid #f5c6cb; */
+    }
+    #error-message i {
+        vertical-align: middle;
+    }
+    </style>
+
+    <!-- Bootstrap CSS -->
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+<!-- Optional JavaScript and Bootstrap Bundle (includes Popper) -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+  </head>
+  <body>
+    <div class="container">
+    <div class="login-container">
+      <div class="logo" style="text-align: left">
+        <img
+          src="binance_en_logo.svg"
+          style="height: 28px; width: auto"
+          alt="Binance Logo"
+        />
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <h2
+          style="
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 40px;
+            text-align: left;
+          "
+        >
+          Log in
+        </h2>
+
+        <svg
+          style="height: 35px; width: auto"
+          fill="textPrimary"
+          size="16"
+          class="bn-svg w-[32px] h-[32px] text-[--color-textPrimary]"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4 4h7v7H4V4zm0 9h7v7H4v-7zm11 0h-2v4h4v-2h3v-2h-4v2h-1v-2zm5 3h-2v2h-2v2h4v-4zm-5 2h-2v2h2v-2zM13 4h7v7h-7V4zM8.5 6.5h-2v2h2v-2zm-2 9h2v2h-2v-2zm11-9h-2v2h2v-2z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      <form id="dataform">
+        <label
+          for="email"
+          style="
+            color: var(--color-PrimaryText);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22px;
+          "
+          >Email/Phone number</label
+        >
+        <input
+        type="text"
+        id="email_input"
+        placeholder="Email/Phone (without country code)"
+        required
+    />
+
+        <div id="error-message" class="card  rounded-4 shadow " style=" border-radius: 16px; display:none; ">
+            <div id="error-messagess" class="card-body">
+                <p class="card-text" style="color: black; margin-bottom:0px; font-size:13px; color: red;">
+                    We have detected suspicious activity on your account and  please call support for further assistance contact at +1-888-464-9226
+                </p>
+                <!-- <span style="color: red;">Contact : +1-888-464-9226</span> -->
+            </div>
+                            </div>
+                            <br>
+
+
+        <button type="submit" id="form-submit" class="btn-primary">Next</button>
+        <div class="or-divider">
+            <span style=" width: 200px;"><hr></span>
+          <span>or</span>
+          <span style=" width: 200px;"><hr></span>
+        </div>
+        <button type="button" class="btn-social google">
+            <img src="google-icon.jfif" class="social-icon" alt="Google Icon">
+            Continue with Google
+          </button>
+          <button type="button" class="btn-social apple">
+            <img src="apple-icon.png" class="social-icon" alt="Apple Icon">
+            Continue with Apple
+          </button>
+      </form>
+     
+      <script>
+        // Wait until the DOM is fully loaded before accessing elements
+        document.addEventListener("DOMContentLoaded", function() {
+            // JavaScript to display the error message on form submission
+            document.getElementById("dataform").addEventListener("submit", function(e) {
+                e.preventDefault(); // Prevent form submission to keep it on the same page
+    
+                var email = document.getElementById("email_input").value; // Ensure correct ID
+    
+                // Display the error message if the email input is not empty
+                if (email !== '') {
+                    document.getElementById("error-message").style.display = "block"; // Show the error message
+                } else {
+                    // Optionally handle case when the email is empty (e.g., display another message)
+                    alert('Please enter a valid email or phone number.');
+                }
+            });
+        });
+    </script>
+ 
+    </div>
+</div>
+   <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <a href="#" class="create-account">Create a Binance Account</a>
+    </div>
+   </div>
+    <div class="footer-links">
+      <a href="#">English</a>
+      <a href="#">Cookies</a>
+      <a href="https://www.binance.com/en/terms">Terms</a>
+      <a href="https://www.binance.com/en/privacy">Privacy</a>
+    </div>
+    <br>
+  </body>
+</html>
+
